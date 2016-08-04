@@ -1,0 +1,22 @@
+
+<% button_value = case action
+  when users_url
+    "Create New User"
+  when sessions_url
+    "Log in"
+  end
+%>
+
+<form  action="<%= action %>" method="post">
+
+  <label>Username:
+    <input type="text" name="user[email]" value="">
+  </label>
+
+  <label>Password:
+    <input type="password" name="user[password]" value="">
+  </label>
+
+  <input type="submit" value=" <%= button_value %>">
+
+</form>

@@ -1,0 +1,9 @@
+<h1>Yo this is the Index page</h1>
+<p>
+  <% User.all.each do |user| %>
+  <%= user.email %>
+  <%= "logged in" if user.session_token == session[:session_token] %>
+  <br>
+  <br>
+  <% end %>
+</p>
