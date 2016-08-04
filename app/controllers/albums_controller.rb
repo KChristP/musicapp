@@ -1,7 +1,9 @@
 class AlbumsController < ApplicationController
 
   def create
+    album_params
     @album = Album.new(album_params)
+
     if @album.save
       redirect_to bands_url
     else
@@ -16,7 +18,8 @@ class AlbumsController < ApplicationController
 
   private
   def album_params
-    params.require(:album).permit(:name, :band_id, :recording_style)
+    first_params = params.require(:album).permit(:name, :band, :recording_style)
+    band_id = Band.find_by(name: first_params[:name])
   end
 
 end
