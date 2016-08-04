@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       login(@user)
       redirect_to users_url
     else
-      flash.now[:errors] = @user.errors.full_messages
+      flash.now[:user_errors] = @user.errors.full_messages
       render :new
     end
   end
@@ -20,19 +20,15 @@ class UsersController < ApplicationController
   end
 
   def edit
-
   end
 
   def show
-
   end
 
   def update
-
   end
 
   def destroy
-
   end
 
   private

@@ -1,0 +1,24 @@
+<form  action="<%= albums_url %>" method="post">
+
+  <label>Band:
+    <select class="" name="album[band]">
+      <% Band.all.each do |band| %>
+      <option value="<% band.name %>"><%= band.name %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <label>Album Name:
+    <input type="text" name="album[name]" value="">
+  </label>
+
+  <label>
+    <select name="album[recording_style]">
+      <option value="live">Live</option>
+      <option value="studio">Studio</option>
+    </select>
+  </label>
+
+  <input type="submit" value="Submit Album">
+
+</form>
